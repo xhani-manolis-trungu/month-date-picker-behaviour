@@ -1,0 +1,22 @@
+<div>
+  <div>
+    <mat-slide-toggle [formControl]="canChooseDay">day-picker</mat-slide-toggle>
+    </div>
+  <div>
+    <mat-form-field>
+    <input matInput [matDatepicker]="dp" placeholder="Month and Year" [formControl]="date">
+    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+    <mat-datepicker #dp
+                    startView="multi-year"
+                    (yearSelected)="chosenYearHandler($event)"
+                    (monthSelected)="chosenMonthHandler($event, dp)"
+                    panelClass="example-month-picker">
+    </mat-datepicker>
+    </mat-form-field>
+  </div>
+</div>
+
+
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
